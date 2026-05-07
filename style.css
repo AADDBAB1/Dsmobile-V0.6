@@ -8,9 +8,12 @@ body{
     font-family:Arial,sans-serif;
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
     min-height:100vh;
-    overflow:hidden;
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding:10px 0;
+    box-sizing:border-box;
 }
 
 /* =========================
@@ -20,7 +23,7 @@ body{
 .player{
     width:100%;
     max-width:420px;
-    height:100vh;
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     gap:10px;
