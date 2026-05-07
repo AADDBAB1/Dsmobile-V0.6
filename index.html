@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>MP4 Player Mobile</title>
+
+<link
+    rel="stylesheet"
+    href="style.css"
+>
+
+</head>
+
+<body>
+
+<div class="player">
+
+    <!-- PLAYER VIDEO -->
+
+    <div
+        class="top-screen"
+        id="videoContainer"
+    >
+
+        <video
+            id="videoPlayer"
+            playsinline
+        ></video>
+
+        <!-- LEGENDA -->
+
+        <div id="subtitle"></div>
+
+        <!-- MENU FLUTUANTE -->
+
+        <div
+            class="fullscreen-ui"
+            id="fullscreenUI"
+        >
+
+            <div class="buttons">
+
+                <button onclick="togglePlay()">
+                    ⏯
+                </button>
+
+                <button onclick="backward()">
+                    ⏪
+                </button>
+
+                <button onclick="forward()">
+                    ⏩
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CONTROLES -->
+
+    <div class="controls-panel">
+
+        <!-- BARRAS -->
+
+        <div class="bar-group">
+
+            <input
+                type="range"
+                id="seekBar"
+                min="0"
+                max="100"
+                value="0"
+            >
+
+            <input
+                type="range"
+                id="volumeBar"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+            >
+
+        </div>
+
+        <!-- BOTÕES -->
+
+        <div class="buttons">
+
+            <button onclick="togglePlay()">
+                Play
+            </button>
+
+            <button onclick="stopVideo()">
+                Stop
+            </button>
+
+            <button onclick="muteVideo()">
+                Mute
+            </button>
+
+            <button onclick="backward()">
+                -10s
+            </button>
+
+            <button onclick="forward()">
+                +10s
+            </button>
+
+            <button onclick="toggleFullscreen()">
+                Full
+            </button>
+
+        </div>
+
+        <!-- INPUT VIDEO -->
+
+        <input
+            type="file"
+            id="videoInput"
+            accept="video/mp4"
+            multiple
+            hidden
+        >
+
+        <button onclick="videoInput.click()">
+            Carregar Vídeos
+        </button>
+
+        <!-- INPUT LEGENDA -->
+
+        <input
+            type="file"
+            id="subtitleInput"
+            accept=".srt"
+            hidden
+        >
+
+        <button onclick="subtitleInput.click()">
+            Carregar Legenda
+        </button>
+
+    </div>
+
+    <!-- PLAYLIST -->
+
+    <div class="bottom-screen">
+
+        <div id="videoList"></div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
